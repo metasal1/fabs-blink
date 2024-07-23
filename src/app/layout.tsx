@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Head from "next/head";
+
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,16 +17,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta property="og:image" content="https://run.fabs.fun/fabs-burn.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
-        <meta name="twitter:image" content="https://run.fabs.fun/fabs-burn.png" />
-        <meta name="twitter:image:type" content="image/png" />
-        <meta name="twitter:image:width" content="800" />
-        <meta name="twitter:image:height" content="800" />
-      </Head>
+      <head>
+        <meta
+          name="description" content="" />
+        <meta name="twitter:description" content=""
+        />
+        <meta property="og:image" content="https://run.fabs.fun/fabs-blink.png" />
+        <meta property="twitter:image" content="https://run.fabs.fun/fabs-blink.png" />
+        <meta name="twitter:site" content="@fabsonsol" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title" content="FABS.fun" />
+        <meta property="og:site_name" content="FABS.fun" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
