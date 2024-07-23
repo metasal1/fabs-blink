@@ -1,15 +1,26 @@
-export const metadata = {
-  title: 'FABS.fun',
-  description: 'Run, fun and FABS',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  openGraph: {
+    title: 'Your Page Title',
+    description: 'Your page description',
+    images: [
+      {
+        url: 'https://run.fabs.fun/fabs-burn.png',
+        width: 1000,
+        height: 1000,
+        alt: 'FABS.fun',
+      },
+    ],
+  },
   twitter: {
     card: 'summary_large_image',
-    site: '@Sonarwatch',
     title: 'FABS.fun',
-    description: 'Run, fun and FABS',
-    image: 'https://sonar.watch/banner.jpg',
+    description: 'Feel the burn',
+    images: ['https://run.fabs.fun/fabs-burn.png'],
+    creator: '@fabsonsol',
   },
 }
-
 export default function RootLayout({
   children, params }: { children: React.ReactNode, params: any }) {
   return (
