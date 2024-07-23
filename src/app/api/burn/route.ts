@@ -24,7 +24,7 @@ export const GET = async (req: Request) => {
         const { toPubkey } = validatedQueryParams(requestUrl);
 
         const baseHref = new URL(
-            `/api/burn?to=${toPubkey.toBase58()}`,
+            `/api/burn`,
             requestUrl.origin,
         ).toString();
 
@@ -37,19 +37,19 @@ export const GET = async (req: Request) => {
                 actions: [
                     {
                         label: "Burn 1 FAB", // button text
-                        href: `${baseHref}&amount=${"1"}`,
+                        href: `${baseHref}?amount=${"1"}`,
                     },
                     {
                         label: "Burn 69 FABS", // button text
-                        href: `${baseHref}&amount=${"69"}`,
+                        href: `${baseHref}?amount=${"69"}`,
                     },
                     {
                         label: "Burn 420 FABS", // button text
-                        href: `${baseHref}&amount=${"420"}`,
+                        href: `${baseHref}?amount=${"420"}`,
                     },
                     {
                         label: "Burn FABS", // button text
-                        href: `${baseHref}&amount={amount}`, // this href will have a text input
+                        href: `${baseHref}?amount={amount}`, // this href will have a text input
                         parameters: [
                             {
                                 name: "amount", // parameter name in the `href` above
