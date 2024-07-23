@@ -31,7 +31,7 @@ export const GET = async (req: Request) => {
         const payload: ActionGetResponse = {
             title: "FABS.fun",
             icon: new URL("/fabs-burn.png", requestUrl.origin).toString(),
-            description: "Burn FABS ",
+            description: "If you ❤️ something, let it 🔥",
             label: "Burn", // this value will be ignored since `links.actions` exists
             links: {
                 actions: [
