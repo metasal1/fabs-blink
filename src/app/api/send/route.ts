@@ -29,31 +29,31 @@ export const GET = async (req: Request) => {
         ).toString();
 
         const payload: ActionGetResponse = {
-            title: "Actions Example - Transfer USDC-SPL",
+            title: "FABS.fun",
             icon: new URL("/fabs-blink.png", requestUrl.origin).toString(),
-            description: "Transfer USDC-SPL to another Solana wallet ",
+            description: "Send FABS ",
             label: "Transfer", // this value will be ignored since `links.actions` exists
             links: {
                 actions: [
                     {
-                        label: "Send 10 USDC", // button text
+                        label: "Send 1 FABS", // button text
                         href: `${baseHref}&amount=${"1"}`,
                     },
                     {
-                        label: "Send 50 USDC", // button text
-                        href: `${baseHref}&amount=${"5"}`,
+                        label: "Send 69 FABS", // button text
+                        href: `${baseHref}&amount=${"69"}`,
                     },
                     {
-                        label: "Send 100 USDC", // button text
-                        href: `${baseHref}&amount=${"10"}`,
+                        label: "Send 420 FABS", // button text
+                        href: `${baseHref}&amount=${"420"}`,
                     },
                     {
-                        label: "Send USDC", // button text
+                        label: "Send FABS", // button text
                         href: `${baseHref}&amount={amount}`, // this href will have a text input
                         parameters: [
                             {
                                 name: "amount", // parameter name in the `href` above
-                                label: "Enter the amount of USDC to send", // placeholder of the text input
+                                label: "Enter the amount of FABS to send", // placeholder of the text input
                                 required: true,
                             },
                         ],
@@ -101,7 +101,7 @@ export const POST = async (req: Request) => {
         const connection = new Connection(
             process.env.SOLANA_RPC! || clusterApiUrl("devnet"),
         );
-        const decimals = 6; // In the example, we use 6 decimals for USDC, but you can use any SPL token and change this value
+        const decimals = 5; // In the example, we use 6 decimals for USDC, but you can use any SPL token and change this value
         const mintAddress = new PublicKey(SOLANA_MAINNET_USDC_PUBKEY); // replace this with any SPL token mint address
 
         // converting value to fractional units
@@ -165,7 +165,7 @@ export const POST = async (req: Request) => {
         const payload: ActionPostResponse = await createPostResponse({
             fields: {
                 transaction,
-                message: `Send ${amount} USDC-SPL to ${toPubkey.toBase58()}`,
+                message: `Send ${amount} FABS-SPL to ${toPubkey.toBase58()}`,
             },
             // note: no additional signers are needed
             // signers: [],
