@@ -6,12 +6,12 @@ export const GET = async () => {
             // map all root level routes to an action
             {
                 pathPattern: "/*",
-                apiPath: "/*",
+                apiPath: "/api/burn/*",
             },
             // idempotent rule as the fallback
             {
                 pathPattern: "/**",
-                apiPath: "/**",
+                apiPath: "/api/burn/**",
             },
         ],
     };
