@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Your Page Title',
-    description: 'Your page description',
+    title: 'FABS.fun',
+    description: 'Feel the burn',
     images: [
       {
         url: 'https://run.fabs.fun/fabs-burn.png',
