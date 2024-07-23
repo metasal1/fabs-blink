@@ -30,7 +30,7 @@ export const GET = async (req: Request) => {
 
         const payload: ActionGetResponse = {
             title: "Actions Example - Transfer USDC-SPL",
-            icon: new URL("/fabs-send.png", requestUrl.origin).toString(),
+            icon: new URL("/fabs-blink.png", requestUrl.origin).toString(),
             description: "Transfer USDC-SPL to another Solana wallet ",
             label: "Transfer", // this value will be ignored since `links.actions` exists
             links: {
