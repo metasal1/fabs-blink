@@ -1,7 +1,7 @@
 import { PublicKey } from "@solana/web3.js";
 
 export const DEFAULT_SOL_ADDRESS: PublicKey = new PublicKey(
-    "GaxVqiQyJKQDRu6H4pfy9V6Xq19pHGr6HQKDQDv911Y4", // devnet wallet
+    "GaxVqiQyJKQDRu6H4pfy9V6Xq19pHGr6HQKDQDv911Y4",
 );
 
 export const DEFAULT_SPL_AMOUNT: number = 1.0;
