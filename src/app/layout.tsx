@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   openGraph: {
     title: 'FABS.fun',
+    siteName: 'FABS.fun',
     description: 'Feel the burn',
     images: [
       {
@@ -19,10 +20,11 @@ export const metadata: Metadata = {
     description: 'Feel the burn',
     images: ['https://run.fabs.fun/fabs-burn.png'],
     creator: '@fabsonsol',
+    site: 'https://run.fabs.fun',
   },
 }
 export default function RootLayout({
-  children, params }: { children: React.ReactNode, params: any }) {
+  children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
