@@ -11,7 +11,7 @@ export const GET = async () => {
             // idempotent rule as the fallback
             {
                 pathPattern: "/**",
-                apiPath: "/burn/**",
+                apiPath: "/**",
             },
         ],
     };

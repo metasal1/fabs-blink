@@ -1,37 +1,29 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "FABS.fun",
-  description: "Are you ready to have fun with FABS?"
-};
+export const metadata = {
+  title: 'FABS.fun',
+  description: 'Run, fun and FABS',
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <head>
-        <meta
-          name="description" content="" />
-        <meta name="twitter:description" content=""
-        />
-        <meta property="og:image" content="https://run.fabs.fun/fabs-blink.png" />
-        <meta property="twitter:image" content="https://run.fabs.fun/fabs-blink.png" />
-        <meta name="twitter:site" content="@fabsonsol" />
+        <meta name="description"
+          content="SonarWatch is a multichain dashboard that supports you in monitoring your DeFi portfolio and staying updated on the web3 ecosystem in real time." />
+        <meta name="twitter:description"
+          content="SonarWatch is a multichain dashboard that supports you in monitoring your DeFi portfolio and staying updated on the web3 ecosystem in real time." />
+        <meta property="og:image" content="https://sonar.watch/banner.jpg" />
+        <meta name="twitter:image" content="https://sonar.watch/banner.jpg" />
+        <meta name="twitter:site" content="@Sonarwatch" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:title" content="FABS.fun" />
-        <meta property="og:site_name" content="FABS.fun" />
+        <meta property="og:title" content="Sonar Watch, the multichain dashboard that empowers your DeFi journey" />
+        <meta property="og:site_name" content="Sonar Watch" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
-  );
+  )
 }
