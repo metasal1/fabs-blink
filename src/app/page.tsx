@@ -1,8 +1,14 @@
-import Image from 'next/image';
+'use client'
+import { useRouter } from "next/navigation"
+import { useEffect } from "react"
 export default function Home() {
-    return (
-        <div className="flex justify-center items-center h-screen">
-            <Image src="/fabs-burn.png" alt="FABS.fun" width={256} height={256} />
-        </div>
-    );
+    const router = useRouter()
+    const url = "https://dial.to/?action=solana-action:https://run.fabs.fun/burn"
+
+    // Redirect the user to the specified URL
+    useEffect(() => {
+        router.push(url)
+    })
+
+    return null
 }

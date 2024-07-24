@@ -3,15 +3,12 @@ import { ACTIONS_CORS_HEADERS, ActionsJson } from "@solana/actions";
 export const GET = async () => {
     const payload: ActionsJson = {
         rules: [
-            // map all root level routes to an action
             {
                 pathPattern: "/burn/*",
-                apiPath: "https://run.fabs.fun/api/burn/*",
-            },
-            // idempotent rule as the fallback
-            {
-                pathPattern: "/burn/**",
-                apiPath: "https://run.fabs.fun/api/burn"
+                apiPath: "https://run.fabs.fun/burn/*"
+            }, {
+                pathPattern: "/burn",
+                apiPath: "https://run.fabs.fun/burn"
             },
         ],
     };

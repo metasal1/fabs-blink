@@ -24,7 +24,7 @@ export const GET = async (req: Request) => {
         const { toPubkey } = validatedQueryParams(requestUrl);
 
         const baseHref = new URL(
-            `/api/burn`,
+            `/burn?amount=`,
             requestUrl.origin,
         ).toString();
 
@@ -37,23 +37,23 @@ export const GET = async (req: Request) => {
                 actions: [
                     {
                         label: "Burn 1 FAB", // button text
-                        href: `${baseHref}?amount=${"1"}`,
+                        href: `${baseHref}${"1"}`,
                     },
                     {
                         label: "Burn 69 FABS", // button text
-                        href: `${baseHref}?amount=${"69"}`,
+                        href: `${baseHref}${"69"}`,
                     },
                     {
                         label: "Burn 420 FABS", // button text
-                        href: `${baseHref}?amount=${"420"}`,
+                        href: `${baseHref}${"420"}`,
                     },
                     {
                         label: "Burn FABS", // button text
-                        href: `${baseHref}?amount={amount}`, // this href will have a text input
+                        href: `${baseHref}{amount}`, // this href will have a text input
                         parameters: [
                             {
                                 name: "amount", // parameter name in the `href` above
-                                label: "Enter the amount of FABS to 🔥 burn", // placeholder of the text input
+                                label: "How many FABS to 🔥 burn?", // placeholder of the text input
                                 required: true,
                             },
                         ],
@@ -110,21 +110,21 @@ export const POST = async (req: Request) => {
         transferAmount = transferAmount.toFixed(decimals);
         transferAmount = transferAmount * Math.pow(10, decimals);
 
-        // const fromTokenAccount = await splToken.getAssociatedTokenAddress(
-        //     mintAddress,
-        //     account,
-        //     false,
-        //     splToken.TOKEN_PROGRAM_ID,
-        //     splToken.ASSOCIATED_TOKEN_PROGRAM_ID,
-        // );
-
-        let toTokenAccount = await splToken.getAssociatedTokenAddress(
+        const fromTokenAccount = await splToken.getAssociatedTokenAddress(
             mintAddress,
-            toPubkey,
-            true,
+            account,
+            false,
             splToken.TOKEN_PROGRAM_ID,
             splToken.ASSOCIATED_TOKEN_PROGRAM_ID,
         );
+
+        // let toTokenAccount = await splToken.getAssociatedTokenAddress(
+        //     mintAddress,
+        //     toPubkey,
+        //     true,
+        //     splToken.TOKEN_PROGRAM_ID,
+        //     splToken.ASSOCIATED_TOKEN_PROGRAM_ID,
+        // );
 
         // const ifexists = await connection.getAccountInfo(toTokenAccount);
 
@@ -151,7 +151,7 @@ export const POST = async (req: Request) => {
         // instructions.push(transferInstruction);
 
         let burnInstruction = splToken.createBurnInstruction(
-            toTokenAccount,
+            fromTokenAccount,
             mintAddress,
             account,
             transferAmount,

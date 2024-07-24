@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'FABS.fun',
     siteName: 'FABS.fun',
+    type: 'website',
     description: 'Feel the burn',
     images: [
       {
