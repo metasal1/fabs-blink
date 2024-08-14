@@ -10,6 +10,13 @@ export const GET = async () => {
                 pathPattern: "/burn",
                 apiPath: "https://run.fabs.fun/burn"
             },
+            {
+                pathPattern: "/rando/*",
+                apiPath: "https://run.fabs.fun/rando/*"
+            }, {
+                pathPattern: "/rando",
+                apiPath: "https://run.fabs.fun/rando"
+            },
         ],
     };
 
